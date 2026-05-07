@@ -15,7 +15,9 @@ import TopUpPage from './pages/user/TopUpPage';
 import TransferPage from './pages/user/TransferPage';
 import QRISPage from './pages/user/QRISPage';
 import QRDisplayPage from './pages/user/QRDisplayPage';
+import QRISScanPage from './pages/user/QRISScanPage';
 import CashflowPage from './pages/user/CashflowPage';
+import UmkmListPage from './pages/user/UmkmListPage';
 import EdukasiListPage from './pages/user/EdukasiListPage';
 import EdukasiDetailPage from './pages/user/EdukasiDetailPage';
 import MencariLokasiPage from './pages/user/MencariLokasiPage';
@@ -56,9 +58,11 @@ function App() {
           <Route path="/user/saldo/transfer" element={<ProtectedRoute role="pelanggan/turis"><TransferPage /></ProtectedRoute>} />
           <Route path="/user/qris" element={<ProtectedRoute role="pelanggan/turis"><QRISPage /></ProtectedRoute>} />
           <Route path="/user/qris/tampilkan" element={<ProtectedRoute role="pelanggan/turis"><QRDisplayPage /></ProtectedRoute>} />
+          <Route path="/user/qris/scan" element={<ProtectedRoute role="pelanggan/turis"><QRISScanPage /></ProtectedRoute>} />
           <Route path="/user/cashflow" element={<ProtectedRoute role="pelanggan/turis"><CashflowPage /></ProtectedRoute>} />
           <Route path="/user/edukasi" element={<ProtectedRoute role="pelanggan/turis"><EdukasiListPage /></ProtectedRoute>} />
           <Route path="/user/edukasi/:id" element={<ProtectedRoute role="pelanggan/turis"><EdukasiDetailPage /></ProtectedRoute>} />
+          <Route path="/user/umkm/list" element={<ProtectedRoute role="pelanggan/turis"><UmkmListPage /></ProtectedRoute>} />
           <Route path="/user/umkm" element={<ProtectedRoute role="pelanggan/turis"><MencariLokasiPage /></ProtectedRoute>} />
           <Route path="/user/umkm/makanan" element={<ProtectedRoute role="pelanggan/turis"><MakananKhasPage /></ProtectedRoute>} />
           <Route path="/user/umkm/makanan/:id" element={<ProtectedRoute role="pelanggan/turis"><MakananDetailPage /></ProtectedRoute>} />

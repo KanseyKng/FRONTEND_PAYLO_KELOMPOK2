@@ -18,24 +18,28 @@ const QRDisplayPage = () => {
   if (!kode) return <LoadingSpinner />;
 
   return (
-    <div className="min-h-screen bg-white flex flex-col items-center px-6 py-8">
-      <div className="self-start mb-4">
-        <BackButton to="/user/qris" />
+    <div className="min-h-screen bg-gray-200 flex justify-center">
+      <div className="max-w-[375px] w-full bg-white min-h-screen shadow-lg relative">
+        <div className="bg-[#08F] text-white p-4 flex items-center gap-4">
+          <BackButton to="/user/qris" />
+          <h2 className="text-xl font-semibold">QRIS Siap Digunakan</h2>
+        </div>
+        <div className="flex flex-col items-center p-6">
+          <div className="border-4 border-gray-300 p-2 rounded-lg mt-4">
+            <img
+              src={`https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=${kode}`}
+              alt="QR Code"
+              className="w-48 h-48"
+            />
+          </div>
+          <p className="mt-4 text-gray-600">
+            Masa berlaku <span className="font-bold text-[#08F]">{`00:${timer.toString().padStart(2, '0')}`}</span>
+          </p>
+          <p className="text-xs text-gray-400 mt-6 text-center max-w-xs">
+            Pastikan nominal transaksi sudah sesuai. Transaksi dengan QRIS akan langsung mendebet rekening anda.
+          </p>
+        </div>
       </div>
-      <h2 className="text-xl font-semibold mb-4">QRIS Siap Digunakan</h2>
-      <div className="border-4 border-gray-300 p-2 rounded-lg">
-        <img
-          src={`https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=${kode}`}
-          alt="QR Code"
-          className="w-48 h-48"
-        />
-      </div>
-      <p className="mt-4 text-gray-600">
-        Masa berlaku <span className="font-bold text-[#08F]">{`00:${timer.toString().padStart(2, '0')}`}</span>
-      </p>
-      <p className="text-xs text-gray-400 mt-6 text-center max-w-xs">
-        Pastikan nominal transaksi sudah sesuai. Transaksi dengan QRIS akan langsung mendebet rekening anda.
-      </p>
     </div>
   );
 };

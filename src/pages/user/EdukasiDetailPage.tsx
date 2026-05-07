@@ -21,13 +21,15 @@ const EdukasiDetailPage = () => {
   if (!data) return <LoadingSpinner />;
 
   return (
-    <div className="min-h-screen bg-[#08F]">
-      <div className="bg-[#08F] text-white p-4 flex items-center gap-4">
-        <BackButton to="/user/edukasi" />
-        <h2 className="text-xl font-semibold">{data.judul}</h2>
-      </div>
-      <div className="bg-white rounded-t-3xl p-6 mx-2 min-h-full">
-        <p className="text-sm text-gray-700 leading-relaxed whitespace-pre-line">{data.isi_edukasi}</p>
+    <div className="min-h-screen bg-gray-200 flex justify-center">
+      <div className="max-w-[375px] w-full bg-white min-h-screen shadow-lg relative">
+        <div className="bg-[#08F] text-white p-4 flex items-center gap-4">
+          <BackButton to="/user/edukasi" />
+          <h2 className="text-xl font-semibold">{data.judul}</h2>
+        </div>
+        <div className="p-6">
+          <p className="text-sm text-gray-700 leading-relaxed whitespace-pre-line">{data.isi_edukasi}</p>
+        </div>
       </div>
     </div>
   );

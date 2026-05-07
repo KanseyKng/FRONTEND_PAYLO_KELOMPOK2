@@ -27,23 +27,25 @@ const EditProfilPage = () => {
   };
 
   return (
-    <div className="min-h-screen bg-white">
-      <div className="bg-[#08F] text-white p-4 flex items-center gap-4">
-        <BackButton to="/user/profil" />
-        <h2 className="text-xl font-semibold">Ubah Data Diri</h2>
-      </div>
-      <form onSubmit={handleSubmit} className="p-6 space-y-4">
-        <input className="border rounded-lg p-3 w-full" placeholder="Nama" value={nama} onChange={(e) => setNama(e.target.value)} />
-        <input className="border rounded-lg p-3 w-full" placeholder="No HP" value={noHp} onChange={(e) => setNoHp(e.target.value)} />
-        <input className="border rounded-lg p-3 w-full" placeholder="Alamat" value={alamat} onChange={(e) => setAlamat(e.target.value)} />
-        <input className="border rounded-lg p-3 w-full" placeholder="PIN untuk konfirmasi" type="password" value={pin} onChange={(e) => setPin(e.target.value)} required />
-        <button type="submit" className="w-full bg-[#08F] text-white py-3 rounded-lg font-semibold">Simpan</button>
-      </form>
-      {toast && (
-        <div className="fixed bottom-10 left-1/2 transform -translate-x-1/2 bg-green-500 text-white px-6 py-3 rounded-full shadow-lg">
-          {toast.message}
+    <div className="min-h-screen bg-gray-200 flex justify-center">
+      <div className="max-w-[375px] w-full bg-white min-h-screen shadow-lg relative">
+        <div className="bg-[#08F] text-white p-4 flex items-center gap-4">
+          <BackButton to="/user/profil" />
+          <h2 className="text-xl font-semibold">Ubah Data Diri</h2>
         </div>
-      )}
+        <form onSubmit={handleSubmit} className="p-6 space-y-4">
+          <input className="border rounded-lg p-3 w-full" placeholder="Nama" value={nama} onChange={(e) => setNama(e.target.value)} />
+          <input className="border rounded-lg p-3 w-full" placeholder="No HP" value={noHp} onChange={(e) => setNoHp(e.target.value)} />
+          <input autoComplete="off" className="border rounded-lg p-3 w-full" placeholder="Alamat" value={alamat} onChange={(e) => setAlamat(e.target.value)} />
+          <input autoComplete="off" className="border rounded-lg p-3 w-full" placeholder="PIN untuk konfirmasi" type="password" value={pin} onChange={(e) => setPin(e.target.value)} required />
+          <button type="submit" className="w-full bg-[#08F] text-white py-3 rounded-lg font-semibold">Simpan</button>
+        </form>
+        {toast && (
+          <div className="fixed bottom-10 left-1/2 transform -translate-x-1/2 bg-green-500 text-white px-6 py-3 rounded-full shadow-lg">
+            {toast.message}
+          </div>
+        )}
+      </div>
     </div>
   );
 };
